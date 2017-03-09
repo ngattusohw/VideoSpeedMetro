@@ -3,12 +3,16 @@
 		<title>
 			For ruby
 		</title>
+		<link rel="stylesheet" type="text/css" href="format.css">
+		<script src="video.js"></script>
+		
 	</head>
 
 	<body>
-		<h1> Hi </h1>
-		<input type="file" accept="video/*"/>
-		<video controls autoplay></video>
+		<h1>HTML5 local video file player example</h1>
+		<div id="message"></div>
+		<input type="file" accept="video/*" onclick="localFileVideoPlayer()" />
+		<video id="myVideo" controls autoplay></video>
 
 	</body>
 </html>

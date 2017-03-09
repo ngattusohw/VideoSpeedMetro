@@ -1,0 +1,16 @@
+video, input {
+    display: block;
+    width: 75%;
+}
+
+input {
+    width: 50%; 
+    height: 20%;
+}
+
+.info {
+    background-color: aqua;            
+}
+
+.error {
+    background-color: red;
