@@ -9,6 +9,7 @@ function localFileVideoPlayer() {
   var playSelectedFile = function (event){
     var file = this.files[0];
     var type = file.type;
+    document.getElementById('insertVideo').innerHTML = '<video id="myVideo" controls autoplay></video>';
     var videoNode = document.querySelector('video');
     var canPlay = videoNode.canPlayType(type);
     if (canPlay === '') canPlay = 'no';
