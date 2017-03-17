@@ -1,8 +1,5 @@
 var initalBPM;
 
-
-
-
 function localFileVideoPlayer() {
   var URL = window.URL || window.webkitURL;
   var displayMessage = function (message, isError){
@@ -98,7 +95,7 @@ function updateBpm() {
     }
     $('#divBpm').html(value); 
     $('#divBpmTitle').html(title);
-    console.log(bpm);
+    updateSpeed(bpm);
 }
 
 shortcut.add(" ",function() {
@@ -110,6 +107,28 @@ shortcut.add("x",function() {
 shortcut.add("Shift+x",function() {
     handleReset();
 });
+
+shortcut.add("t", function() {
+    updateSpeed(initalBPM);
+});
+
+
+function updateSpeed(setBPM){
+    var vid = document.getElementById("myVideo");
+    //console.log(setBPM);
+
+    if(setBPM == null){
+        console.log("FUCK");
+        return;
+    }
+      
+    console.log("SHIT");
+
+    var speed = setBPM/initalBPM;
+    console.log(speed);
+
+    vid.playbackRate = speed;
+}
 
 
 
