@@ -1,3 +1,8 @@
+var initalBPM;
+
+
+
+
 function localFileVideoPlayer() {
   var URL = window.URL || window.webkitURL;
   var displayMessage = function (message, isError){
@@ -51,6 +56,13 @@ function localFileVideoPlayer() {
 //     }
 
 // }
+
+function setInital(){
+  initalBPM = document.getElementById("initalBPM").value;
+  console.log(initalBPM);
+}
+
+
 
 //Start BPM tracking
 var startTime = null;
