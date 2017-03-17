@@ -2,6 +2,7 @@
 h1{
 	text-align: center;
 }
+
 #content{
     background: #fff;
     height: 600px;
@@ -27,3 +28,16 @@ input {
 
 .error {
     background-color: red;
+}
+
+.formFormat{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+
+
+
+

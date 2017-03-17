@@ -1,5 +1,4 @@
 function localFileVideoPlayer() {
-	console.log("Here");
   var URL = window.URL || window.webkitURL;
   var displayMessage = function (message, isError){
     var element = document.querySelector('#message');
@@ -9,7 +8,7 @@ function localFileVideoPlayer() {
   var playSelectedFile = function (event){
     var file = this.files[0];
     var type = file.type;
-    document.getElementById('insertVideo').innerHTML = '<video id="myVideo" controls autoplay></video>';
+    document.getElementById('content').innerHTML += '<video id="myVideo" controls autoplay></video>';
     var videoNode = document.querySelector('video');
     var canPlay = videoNode.canPlayType(type);
     if (canPlay === '') canPlay = 'no';
