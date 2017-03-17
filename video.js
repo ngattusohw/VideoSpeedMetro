@@ -43,7 +43,11 @@ document.onkeypress= function(evt)
 
     else if(charStr == "+")
     {
-      vid.playbackRate +=.5;
+      vid.playbackRate = 2;
+    }
+
+    else if (charStr == "T" || charStr == "t"){
+      vid.playbackRate = 1;
     }
 
 }
