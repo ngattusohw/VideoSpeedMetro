@@ -27,27 +27,78 @@ function localFileVideoPlayer() {
   inputNode.addEventListener('change', playSelectedFile, false);
 }
 
-document.onkeypress= function(evt)
-{
+// document.onkeypress= function(evt)
+// {
 
-    var charCode = evt.keyCode || evt.which;
-    var charStr = String.fromCharCode(charCode);
-    var vid = document.getElementById("myVideo");
+//     var charCode = evt.keyCode || evt.which;
+//     var charStr = String.fromCharCode(charCode);
+//     var vid = document.getElementById("myVideo");
     
-    console.log(charStr);
+//     console.log(charStr);
 
-    if(charStr == "-")
-    {
-      vid.playbackRate -= .5;
+//     if(charStr == "-")
+//     {
+//       vid.playbackRate -= .5;
+//     }
+
+//     else if(charStr == "+")
+//     {
+//       vid.playbackRate = 2;
+//     }
+
+//     else if (charStr == "T" || charStr == "t"){
+//       vid.playbackRate = 1;
+//     }
+
+// }
+
+//Start BPM tracking
+var startTime = null;
+var currentBeats = 0;
+
+
+function handleNewBeat() {
+    if (currentBeats == 0) {
+        startTime = new Date();
     }
-
-    else if(charStr == "+")
-    {
-      vid.playbackRate = 2;
-    }
-
-    else if (charStr == "T" || charStr == "t"){
-      vid.playbackRate = 1;
-    }
-
+    currentBeats++;
+    updateBpm();
 }
+
+function handleReset() {
+    startTime = null;
+    currentBeats = 0;
+    updateBpm();
+}
+
+function updateBpm() {
+    var value = '&nbsp;';
+    var title = 'BPM';
+    if (currentBeats > 1) {
+        var now = new Date();
+        var miliseconds = now.getTime() - startTime.getTime();
+        var minutes = miliseconds / 60000.0;
+        var bpm = (currentBeats - 1) / minutes;
+        value = bpm.toFixed(2);
+        title = 'BPM (' + currentBeats.toString() + ' beats)';
+    } else if (currentBeats == 1) {
+        title = 'BPM (1 beat)';
+    }
+    $('#divBpm').html(value); 
+    $('#divBpmTitle').html(title);
+    console.log(bpm);
+}
+
+shortcut.add(" ",function() {
+    handleNewBeat();
+});
+shortcut.add("x",function() {
+    handleReset();
+});
+shortcut.add("Shift+x",function() {
+    handleReset();
+});
+
+
+
+
