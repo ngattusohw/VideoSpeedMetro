@@ -1,5 +1,5 @@
     
-h1{
+h1,h3{
 	text-align: center;
 }
 
@@ -12,17 +12,7 @@ h1{
     margin-top: 100px;
 }
 
-video, input {
-    display: block;
-    width: 75%;
-}
-
-input {
-    width: 50%; 
-    height: 20%;
-}
-
-.info {
+.info{
     background-color: aqua;            
 }
 
@@ -36,8 +26,9 @@ input {
 	text-align: center;
 }
 
-
-
+.chooseFile{
+    display: none;
+}
 
 
 

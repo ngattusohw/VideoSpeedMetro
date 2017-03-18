@@ -25,6 +25,7 @@ function localFileVideoPlayer() {
     var fileURL = URL.createObjectURL(file);
     videoNode.src = fileURL;
   }
+
   var inputNode = document.querySelector('input');
   inputNode.addEventListener('change', playSelectedFile, false);
 }
@@ -57,6 +58,10 @@ function localFileVideoPlayer() {
 function setInital(){
   initalBPM = document.getElementById("initalBPM").value;
   console.log(initalBPM);
+  //check to see if theres anything in val before setting to initalBPM
+  
+  $('#choose').css("display" , "block");
+
 }
 
 
@@ -118,12 +123,9 @@ function updateSpeed(setBPM){
     //console.log(setBPM);
 
     if(setBPM == null){
-        console.log("FUCK");
         return;
     }
       
-    console.log("SHIT");
-
     var speed = setBPM/initalBPM;
     console.log(speed);
 

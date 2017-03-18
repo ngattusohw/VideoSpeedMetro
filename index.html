@@ -13,11 +13,20 @@
 
 	<body>
 		<h1>Video Metronome Matcher</h1>
+		<h3>Collect Software </h3>
 		<div id="content">
 			<div id="message"></div>
-			<textarea id="initalBPM" class="area" rows="1" cols="4" maxlength="3"></textarea>
-			<button type="button" onclick="setInital()">Push inital</button>
-			<input type="file" accept="video/*" onclick="localFileVideoPlayer()" />
+			<div class="formFormat">
+				<p> Add the inital tempo </p>
+				<textarea id="initalBPM" class="area" rows="1" cols="4" maxlength="3"></textarea>
+				<button type="button" onclick="setInital()">Push inital</button>
+				<div id="choose" class="chooseFile">
+					<input type="file" accept="video/*" onclick="localFileVideoPlayer()" />
+				</div>
+
+			</div>
+			
+			
 			<div id="insertVideo"></div>
 		</div>
 	</body>
