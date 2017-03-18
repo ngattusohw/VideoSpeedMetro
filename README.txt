@@ -3,7 +3,7 @@
 
 
 ***** Welcome to the video metronome syncer V1******
-This program allows you to upload a video locally and dynamically change its speed to for live music video showings!
+This program allows you to upload a video locally and dynamically change its speed for live music video showings!
 
 
 How to use:
