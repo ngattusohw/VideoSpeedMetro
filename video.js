@@ -106,13 +106,15 @@ function updateBpm() {
 shortcut.add(" ",function() {
     handleNewBeat();
 });
+shortcut.add("m",function(){
+    handleNewBeat();
+});
 shortcut.add("x",function() {
     handleReset();
 });
 shortcut.add("Shift+x",function() {
     handleReset();
 });
-
 shortcut.add("t", function() {
     updateSpeed(initalBPM);
 });
