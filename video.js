@@ -56,11 +56,17 @@ function localFileVideoPlayer() {
 // }
 
 function setInital(){
-  initalBPM = document.getElementById("initalBPM").value;
-  console.log(initalBPM);
-  //check to see if theres anything in val before setting to initalBPM
-  
-  $('#choose').css("display" , "block");
+    initalBPM = document.getElementById("initalBPM").value;
+    console.log(initalBPM);
+
+    if(initalBPM == ""){
+        alert("Please fill out the inital BPM to continue!");
+        initalBPM=null;
+        return;
+    }
+    //check to see if theres anything in val before setting to initalBPM
+
+    $('#choose').css("display" , "block");
 
 }
 
